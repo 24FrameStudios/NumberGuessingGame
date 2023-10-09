@@ -10,8 +10,6 @@ guessesLeft = 10;
 
 guesses.textContent = "Guesses Left:  " + guessesLeft
 
-console.log(randNum)
-
 document.addEventListener('keyup', function(KeyboardEvent) {
     if (KeyboardEvent.keyCode === 13) {
         event.preventDefault();
@@ -29,6 +27,8 @@ function checkPlayerGuess() {
     if (playerGuess === randNum && guessesLeft > 0) {
         lastResult.textContent = "Congratulations! You got it right!";
         lastResult.style.backgroundColor = "green";
+        guessesLeft--
+        guesses.textContent = "Guesses Left:  " + guessesLeft;
         setGameOver();
     } else if (guessesLeft === 1) {
         lastResult.textContent = "GAME OVER!";
@@ -69,16 +69,16 @@ function resetGame() {
     input.value = "";
     submit.disabled = false;
     submit.style.backgroundColor = "rgb(19, 43, 94)";
+    submit.addEventListener('mouseenter', () => {
+        submit.style.backgroundColor = "rgb(34, 66, 131)";
+    });
+    submit.addEventListener('mouseleave', () => {
+        submit.style.backgroundColor = "rgb(19, 43, 94)";
+    });
     submit.style.cursor = "pointer";
     guessesLeft = 10;
     lastResult.textContent = "Enter a guess above!";
     lastResult.style.backgroundColor = "rgb(243, 246, 255)"
     guesses.textContent = "Guesses Left:  " + guessesLeft;
     input.focus();
-
 }
-
-
-// resetButton.addEventListener('click', () => {
-//     window.location.reload()
-// })
