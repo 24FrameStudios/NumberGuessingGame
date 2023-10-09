@@ -21,6 +21,7 @@ document.addEventListener('keyup', function(KeyboardEvent) {
 
 submit.addEventListener('click', checkPlayerGuess)
 
+resetButton.addEventListener('click', resetGame)
 
 function checkPlayerGuess() {
     const playerGuess = Number(input.value)
@@ -28,17 +29,13 @@ function checkPlayerGuess() {
     if (playerGuess === randNum && guessesLeft > 0) {
         lastResult.textContent = "Congratulations! You got it right!";
         lastResult.style.backgroundColor = "green";
-        submit.disabled = true;
-        submit.style.backgroundColor = "grey";
-        submit.style.cursor = "not-allowed";
+        setGameOver();
     } else if (guessesLeft === 1) {
         lastResult.textContent = "GAME OVER!";
         lastResult.style.backgroundColor = "red";
-        submit.disabled = true;
-        submit.style.backgroundColor = "grey";
-        submit.style.cursor = "not-allowed";
         guessesLeft--
         guesses.textContent = "Guesses Left:  " + guessesLeft;
+        setGameOver();
     } else if (playerGuess < 1 || playerGuess > 100) {
         lastResult.textContent = "Please enter a guess between 1 and 100!"
         lastResult.style.backgroundColor = "yellow";
@@ -51,19 +48,36 @@ function checkPlayerGuess() {
         input.value = "";
         guesses.textContent = "Guesses Left:  " + guessesLeft;
         input.focus();
-    } else if (playerGuess > randNum) {
+    } else {
         guessesLeft--
         lastResult.textContent = "Sorry, too high!"
         lastResult.style.backgroundColor = "yellow";
         input.value = "";
         guesses.textContent = "Guesses Left:  " + guessesLeft;
         input.focus();
-    } else {
-        lastResult.textContent = "Sorry, That's the wrong number!";
     }
 }
 
+function setGameOver() {
+    submit.disabled = true;
+    submit.style.backgroundColor = "grey";
+    submit.style.cursor = "not-allowed";
+}
 
-resetButton.addEventListener('click', () => {
-    window.location.reload()
-})
+function resetGame() {
+    input.value = "";
+    submit.disabled = false;
+    submit.style.backgroundColor = "rgb(19, 43, 94)";
+    submit.style.cursor = "pointer";
+    guessesLeft = 10;
+    lastResult.textContent = "Enter a guess above!";
+    lastResult.style.backgroundColor = "rgb(243, 246, 255)"
+    guesses.textContent = "Guesses Left:  " + guessesLeft;
+    input.focus();
+
+}
+
+
+// resetButton.addEventListener('click', () => {
+//     window.location.reload()
+// })
