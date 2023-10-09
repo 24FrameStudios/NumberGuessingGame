@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  background-image: linear-gradient(rgb(110, 132, 255), rgb(36, 92, 247));
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.main-container {
+  width: 40%;
+  height: 80%;
+  border-radius: 50px 0px 50px 0px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(187, 202, 247);
+}
+
+.para-container {
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.results-container {
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.input::-webkit-inner-spin-button, .input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input {
+  width: 5vw;
+  font-size: 40px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+  appearance: none;
+  background-color: rgb(243, 246, 255);
+  outline: none;
+  border: solid .5px black;
+}
+
+.lastResult {
+  font-size: 25px;
+  background-color: rgb(243, 246, 255);
+  padding: 20px;
+  border-radius: 50px 0px 50px 0px;
+  width: 50%;
+  margin: 20px;
+}
+
+.guesses {
+  padding: 20px;
+  background-color: rgb(243, 246, 255);
+  border-radius: 50px 0px 50px 0px;
+  width: 35%;
+}
+
+.guessesLeft {
+  font-size: 20px;
+}
+
+.btn {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  width: 170px;
+  height: 50px;
+  font-size: 17px;
+  border: none;
+  background-color: rgb(19, 43, 94);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: rgb(34, 66, 131);
+}
+
+.btn:active {
+  background-color: rgb(19, 43, 94);
+}

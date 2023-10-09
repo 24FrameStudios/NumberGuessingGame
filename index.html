@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Number Guessing Game</title>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Number Guessing Game</h1>
+
+    <div class="para-container">
+      <p>We have selected a random number between 1 and 100.  See if you can guess it in under 10 guesses.  We'll tell you if your guess was too high or too low.</p>
+    </div>
+
+    <p class="prompt">Enter a guess: </p>
+    <input type="number" class="input" min="1" max="100" autofocus>
+    <button id="submit" class="btn">Submit Guess</button>
+    <button id="reset" class="btn">Reset Game</button>
+
+    <div class="results-container">
+      <p class="lastResult">Enter a guess above!</p>
+      <p class="guesses"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
