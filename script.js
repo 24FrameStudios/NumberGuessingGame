@@ -65,6 +65,7 @@ function setGameOver() {
 }
 
 function resetGame() {
+    randNum = Math.floor(Math.random() * 100) + 1;
     input.value = "";
     submit.disabled = false;
     submit.style.backgroundColor = "rgb(19, 43, 94)";
